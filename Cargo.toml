@@ -1,0 +1,18 @@
+[package]
+name = "rustlangcc"
+version = "0.1.0"
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+trillium = "0.1"
+trillium-smol = "0.1"
+trillium-logger = "0.1"
+env_logger = "0.9"
+trillium-router = "0.2"
+askama = "0.10"
+trillium-askama = "0.1"
+
+trillium-rustls = "0.1"
+trillium-proxy = "0.1"

@@ -5,10 +5,15 @@ app = "rustlangcc"
 kill_signal = "SIGINT"
 kill_timeout = 5
 
-[build]
-  builtin = "static"
+# [build]
+#   builtin = "static"
+
+[experimental]
+# required because we can't infer your binary's name
+cmd = "./rustlangcc"
 
 [env]
+PORT = "8080"
 
 [experimental]
   allowed_public_ports = []
@@ -36,5 +41,6 @@ kill_timeout = 5
   [[services.tcp_checks]]
     grace_period = "1s"
     interval = "15s"
+    port = "8080"
     restart_limit = 6
     timeout = "2s"
