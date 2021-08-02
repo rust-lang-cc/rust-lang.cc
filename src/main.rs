@@ -29,6 +29,7 @@ async fn hello2(conn: Conn) -> Conn {
     conn.render(Index2Template { name: "world" })
 }
 
+
 fn main() {
     env_logger::init();
     trillium_smol::config()
