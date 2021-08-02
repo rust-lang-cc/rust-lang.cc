@@ -13,6 +13,8 @@ fn main() {
     trillium_smol::config()
         .with_port(8080)
         .with_host("0.0.0.0")
+        .with_port(8080)
+        .with_host("::")
         .run((
             Logger::new(),
             Router::new()
