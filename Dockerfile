@@ -3,7 +3,7 @@ FROM liuchong/rustup:stable AS builder
 # Make a fake Rust app to keep a cached layer of compiled crates
 RUN USER=root cargo new app
 WORKDIR /usr/src/app
-COPY Cargo.toml Cargo.lock ./
+COPY Cargo.toml ./
 # Needs at least a main.rs file with a main function
 RUN mkdir src && echo "fn main(){}" > src/main.rs
 # Will build all dependent crates in release mode
