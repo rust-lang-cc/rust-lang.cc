@@ -34,7 +34,8 @@ fn main() {
     env_logger::init();
     trillium_smol::config()
         .with_port(8080)
-        .with_host("::")
+        .with_host("0.0.0.0")
+        // .with_host("::")
         .run((
             Logger::new(),
             Router::new()
