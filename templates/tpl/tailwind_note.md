@@ -5,10 +5,15 @@
 
 ## TOC
 [use tailwind directly](#use-tailwind-directly)
+<<<<<<< HEAD
+=======
+    [tailwind.config.js](#tailwindconfigjs)
+>>>>>>> 65638e3e3c4d9db7b205cd3e1eeb264f479e845f
 [use tailwind with framework](#use-tailwind-with-framework)  
 [my usage of tailwind](#my-usage)
 [resources](#resources)
 
+<<<<<<< HEAD
 
 tailwind 可以直接使用，也可以跟其它 前端框架 一起使用。
 
@@ -26,6 +31,26 @@ npm install -D tailwindcss@latest postcss@latest autoprefixer@latest
 
 npx tailwindcss init -p
 生成并修改 tailwind.config.js，这里 -p 同时生成了 postcss.config.js  
+=======
+tailwind 可以直接使用，也可以跟其它 前端框架 一起使用。
+
+### use-tailwind-directly
+
+直接使用 tailwind 方式如下  
+(一般直接使用 tailwind 时结合 alpine.js 或直接跟后端集成)  
+
+安装(获得)一个最原始的 tailwind.css 文件  
+npx tailwindcss@latest build -o tailwind.css  
+(tailwindcss-cli 已失效过期，以后直接使用 tailwindcss 作为 cli)
+('The `tailwindcss-cli` package has been deprecated, use `tailwindcss` instead.')
+
+#### tailwind.config.js  
+生成原始的 tailwind.config.js  
+npx tailwindcss init  
+这将会在您的工程根目录创建一个最小的 tailwind.config.js 文件。  
+```
+// tailwind.config.js
+>>>>>>> 65638e3e3c4d9db7b205cd3e1eeb264f479e845f
 module.exports = {
   purge: [],
   darkMode: false, // or 'media' or 'class'
@@ -35,6 +60,7 @@ module.exports = {
   variants: {},
   plugins: [],
 }
+<<<<<<< HEAD
 
 
 修改 tailwind.config.js 的 purge 部分  
@@ -143,6 +169,21 @@ NODE_ENV=production npx tailwindcss -i ./src/tailwind.css -o ./dist/tailwind.css
 npx tailwindcss -o tailwind.css --watch
 
 #### 使用 purgecss (作用类似上面直接使用 npx tailwindcss)
+=======
+```
+
+[关于 tailwind.config.js 的设置](https://www.tailwindcss.cn/docs/configuration)  
+
+
+然后运行如下  
+```shell
+npm i -g tailwindcss
+pwsh
+$env:NODE_ENV="production"; tailwindcss build -o tailwind_purged.min.css
+```
+
+#### 使用 purgecss (作用类似上面直接使用 tailwind)
+>>>>>>> 65638e3e3c4d9db7b205cd3e1eeb264f479e845f
 
 使用 purgecss 来按 html 使用过的 css 简化
 // purgecss usage:  
@@ -151,16 +192,24 @@ purgecss -css tailwind.css --content index.html --output ./ tailwind_purged.min.
 [purgecss usage](https://www.purgecss.cn/CLI.html)  
 
 
+<<<<<<< HEAD
 ### use-tailwind-with-framework  
 [back to TOC](#TOC)  
+=======
+### use-tailwind-with-framework
+>>>>>>> 65638e3e3c4d9db7b205cd3e1eeb264f479e845f
 
 tailwind 比较常用的用法是跟前端框架一起使用  
 如跟 react, vue, nextjs 等等  
 我在不用 react 的时候就直接用上面的直接使用方式。  
 
 
+<<<<<<< HEAD
 ### my-usage  
 [back to TOC](#TOC)  
+=======
+### my-usage
+>>>>>>> 65638e3e3c4d9db7b205cd3e1eeb264f479e845f
 
 我使用 tailwind 的方式
 
@@ -177,12 +226,34 @@ spacing, 4 是 1rem, 最大 96 是 24rem
 [max-width](https://tailwindcss.com/docs/max-width)  
 
 默认模板  
+<<<<<<< HEAD
 直接参看上面的。  
 
 
 
 #### resources  
 [back to TOC](#TOC)  
+=======
+```html
+<!doctype html>
+<html>
+<head>
+  <!-- ... -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="./tailwind.css" rel="stylesheet">
+</head>
+<body>
+  <!-- ... -->
+  <div class="container mx-auto sm:w-screen md:max-w-2xl">
+
+  </div>
+</body>
+</html>
+```
+
+#### resources
+>>>>>>> 65638e3e3c4d9db7b205cd3e1eeb264f479e845f
 
 有用的资源  
 [play tailwind](https://play.tailwindcss.com/)  
