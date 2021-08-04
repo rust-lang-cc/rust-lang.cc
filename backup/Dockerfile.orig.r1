@@ -1,9 +1,10 @@
-FROM liuchong/rustup:stable AS builder
+FROM rust:latest AS builder
+# FROM liuchong/rustup:stable AS builder
 
 # Make a fake Rust app to keep a cached layer of compiled crates
 RUN USER=root cargo new app
 WORKDIR /usr/src/app
-COPY Cargo.toml Cargo.lock ./
+COPY Cargo.toml ./
 # Needs at least a main.rs file with a main function
 RUN mkdir src && echo "fn main(){}" > src/main.rs
 # Will build all dependent crates in release mode
@@ -15,7 +16,8 @@ COPY . .
 RUN cargo install --path .
 
 # Runtime image
-FROM debian:stretch
+# FROM debian:stretch
+FROM rustdocker/rustup:latest
 
 # Run as "app" user
 RUN useradd -ms /bin/bash app
@@ -24,6 +26,7 @@ USER app
 WORKDIR /app
 
 # Get compiled binaries from builder's cargo install directory
-COPY --from=builder /root/.cargo/bin/ /app/
+# COPY --from=builder /root/.cargo/bin/ /app/
+COPY --from=builder /usr/local/cargo/bin/ /app/
 
 # No CMD or ENTRYPOINT, see fly.toml with `cmd` override.
