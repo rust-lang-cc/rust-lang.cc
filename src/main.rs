@@ -1,11 +1,14 @@
 use trillium::Conn;
-// use trillium::{Conn, Handler};
 use trillium_logger::Logger;
 use trillium_router::Router;
-// use trillium_router::{Router, RouterConnExt};
 use trillium_askama::{AskamaConnExt, Template};
 use trillium_static_compiled::{include_dir, StaticCompiledHandler};
 // use std::net::{Ipv4Addr, Ipv6Addr};
+
+mod application;
+mod routes;
+mod tests;
+use application::application;
 
 #[derive(Template)]
 #[template(path = "tpl/index.html")]
@@ -18,29 +21,19 @@ async fn hello(conn: Conn) -> Conn {
 }
 
 
-#[derive(Template)]
-#[template(path = "tpl/who_and_how.html")]
-struct Index2Template<'a> {
-    name: &'a str,
-}
-
-async fn hello2(conn: Conn) -> Conn {
-    conn.render(Index2Template { name: "world" })
-}
-
-
 fn main() {
-    env_logger::init();
-    #[cfg(unix)]
+    pretty_env_logger::init();
+	
+    #[cfg(unix)]  // comment this line on local developing.
     trillium_smol::config()
         .with_port(8080)
-        // .with_host("0.0.0.0")
+        // .with_host("0.0.0.0") // this line for ipv4, next line for both for ipv4 and ipv6 on fly.io
         .with_host("::")
-        .run((
-            Logger::new(),
+		.run(application());
+		
+        /* .run((
             StaticCompiledHandler::new(include_dir!("./templates/tpl")).with_index_file("index.html"),
             // Router::new()
                 // .get("/", hello),
-                // .get("/who_and_how.html", hello2),
-        ));
+        )); */
 }
