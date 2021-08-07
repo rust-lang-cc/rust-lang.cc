@@ -1,5 +1,9 @@
 use trillium::{conn_unwrap, Conn};
 use trillium_router::{Router, RouterConnExt};
+use trillium_rustls::RustlsConnector;
+use trillium_smol::TcpConnector;
+
+type Proxy = trillium_proxy::Proxy<RustlsConnector<TcpConnector>>;
 
 pub async fn hello_world(conn: Conn) -> Conn {
     conn.ok("hello world!")
@@ -20,4 +24,6 @@ pub fn router() -> Router {
     Router::new()
         .get("/trillium-template/", hello_world)
         .get("/trillium-template/hello/:name", hello_name)
+        .get("/httpbin/*", Proxy::new("https://httpbin.org"))
+        .get("/trillium/*", Proxy::new("https://trillium.rs"))
 }
