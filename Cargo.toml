@@ -8,7 +8,7 @@ edition = "2018"
 
 [dependencies]
 trillium = "0.1.5"
-trillium-smol = "0.1.4"
+trillium-smol = "0.2.0"
 trillium-logger = "0.1.2"
 trillium-router = "0.2.0"
 askama = "0.10.5"
