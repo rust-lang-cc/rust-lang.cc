@@ -1,39 +1,13 @@
-use trillium::Conn;
-// use trillium_logger::Logger;
-// use trillium_router::Router;
-use trillium_askama::{AskamaConnExt, Template};
-// use trillium_static_compiled::{include_dir, StaticCompiledHandler};
-// use std::net::{Ipv4Addr, Ipv6Addr};
+use poem::{listener::TcpListener, route, service::Files, Server};
 
-mod application;
-mod routes;
-mod tests;
-use application::application;
-
-#[derive(Template)]
-#[template(path = "tpl/index.html")]
-struct IndexTemplate<'a> {
-    name: &'a str,
-}
-
-async fn hello(conn: Conn) -> Conn {
-    conn.render(IndexTemplate { name: "world" })
-}
-
-
-fn main() {
-    pretty_env_logger::init();
-	
-    #[cfg(unix)]  // comment this line on local developing.
-    trillium_smol::config()
-        .with_port(8080)
-        // .with_host("0.0.0.0") // this line for ipv4, next line for both for ipv4 and ipv6 on fly.io
-        .with_host("::")
-		.run(application());
-		
-        /* .run((
-            StaticCompiledHandler::new(include_dir!("./templates/tpl")).with_index_file("index.html"),
-            // Router::new()
-                // .get("/", hello),
-        )); */
+#[tokio::main]
+async fn main() {
+    let app = route().nest(
+        "/",
+        Files::new("/").show_files_listing(),
+    );
+    let server = Server::new(TcpListener::bind("0.0.0.0:8080"))
+        .await
+        .unwrap();
+    server.run(app).await.unwrap();
 }
