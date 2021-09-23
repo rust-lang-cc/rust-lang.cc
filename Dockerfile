@@ -2,12 +2,14 @@
 # 要清楚哪里需要编译的可执行文件，目前是 web 目录下需要，最终的 workdir 下面最需要有一个
 # removed builder image steps
 
+
 # Runtime image
 # FROM debian:bullseye-slim  94MB with apt-get update && apt-get install -y wget && rm -rf /var/lib/apt/lists/*
 FROM debian:bullseye-slim
 
 # Get compiled binaries from builder's cargo install directory
 # COPY --from=builder /root/.cargo/bin/rustlangcc /app/
+
 
 # Copy the rest
 COPY . /app/
@@ -26,5 +28,6 @@ USER app
 WORKDIR /app
 
 RUN /app/mdbook build /app/cn-mdbook
+
 
 # No CMD or ENTRYPOINT, see fly.toml with `cmd` override.
