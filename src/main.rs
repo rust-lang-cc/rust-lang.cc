@@ -1,46 +1,13 @@
-use trillium::Conn;
-// use trillium::{Conn, Handler};
-use trillium_logger::Logger;
-use trillium_router::Router;
-// use trillium_router::{Router, RouterConnExt};
-use trillium_askama::{AskamaConnExt, Template};
-use trillium_static_compiled::{include_dir, StaticCompiledHandler};
-// use std::net::{Ipv4Addr, Ipv6Addr};
+use poem::{listener::TcpListener, route, service::Files, Server};
 
-#[derive(Template)]
-#[template(path = "tpl/index.html")]
-struct IndexTemplate<'a> {
-    name: &'a str,
-}
-
-async fn hello(conn: Conn) -> Conn {
-    conn.render(IndexTemplate { name: "world" })
-}
-
-
-#[derive(Template)]
-#[template(path = "tpl/who_and_how.html")]
-struct Index2Template<'a> {
-    name: &'a str,
-}
-
-async fn hello2(conn: Conn) -> Conn {
-    conn.render(Index2Template { name: "world" })
-}
-
-
-fn main() {
-    env_logger::init();
-    #[cfg(unix)]
-    trillium_smol::config()
-        .with_port(8080)
-        // .with_host("0.0.0.0")
-        .with_host("::")
-        .run((
-            Logger::new(),
-            StaticCompiledHandler::new(include_dir!("./templates/tpl")).with_index_file("index.html"),
-            // Router::new()
-                // .get("/", hello),
-                // .get("/who_and_how.html", hello2),
-        ));
+#[tokio::main]
+async fn main() {
+    let app = route().nest(
+        "/",
+        Files::new("/app/front-end/").show_files_listing().index_file("index.html"),
+    );
+    let server = Server::new(TcpListener::bind("0.0.0.0:8080"))
+        .await
+        .unwrap();
+    server.run(app).await.unwrap();
 }
