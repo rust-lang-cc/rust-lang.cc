@@ -112,7 +112,8 @@ npm i daisyui
 
 再次生成 tailwind_purged.css  
 pwsh  
-$env:NODE_ENV="production"; npx tailwindcss -i ./src/rustlangcc.css -o ./src/tailwind_purged.css  
+// $env:NODE_ENV="production"; npx tailwindcss -i ./src/rustlangcc.css -o ./src/tailwind_purged.css  
+$env:NODE_ENV="production"; npx tailwindcss -i ./rustlangcc.css -o ./tailwind_purged.css  
 exit  
 
 用浏览器打开 index.html 看看现在的效果。

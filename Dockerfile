@@ -25,6 +25,6 @@ chmod +x mdbook &&  cp mdbook /app/ && chown -R app:app /app && chmod 755 /app
 USER app
 WORKDIR /app
 
-RUN /app/mdbook build /app/cn-mdbook
+RUN /app/mdbook build /app/cn-mdbook && /app/mdbook build /app/en-mdbook
 
 # No CMD or ENTRYPOINT, see fly.toml with `cmd` override.
