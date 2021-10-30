@@ -1,3 +1,3 @@
 #!/bin/bash
 cp Dockerfile.no-rebuild Dockerfile
-flyctl deploy
+flyctl deploy --remote-only

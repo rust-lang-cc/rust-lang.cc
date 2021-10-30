@@ -1,0 +1,13 @@
+[book]
+authors = ["maozhonggui"]
+language = "en"
+multilingual = false
+src = "src"
+title = "rust-lang.cc practice"
+
+[build]
+build-dir = "../front-end/en"
+create-missing = true
+
+[output.html]
+default-theme = "ayu"

@@ -11,6 +11,11 @@ kill_timeout = 5
 [experimental]
   cmd = "./rustlangcc"
 
+# statics only serve files, not folders, and default serve index.html, otherwise 404
+# [[statics]]
+#   guest_path = "/"
+#   url_prefix = "/root"
+
 [[services]]
   internal_port = 8080
   protocol = "tcp"

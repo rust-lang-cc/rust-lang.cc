@@ -1,0 +1,15 @@
+[book]
+authors = ["maozhonggui"]
+# lang ref: https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry
+# zh-CN is same as zh-Hans-CN but zh-CN is more comman and widely used.
+language = "zh-CN"
+multilingual = false
+src = "src"
+title = "rust-lang 从实例到精通"
+
+[build]
+build-dir = "../front-end/cn"
+create-missing = true
+
+[output.html]
+default-theme = "ayu"
