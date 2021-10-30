@@ -29,6 +29,7 @@
 - [Rust 命令行手册](https://suibianxiedianer.github.io/rust-cli-book-zh_CN/)  
 
 - [Rust API 编写指南](https://zjp-cn.github.io/api-guidelines/)  
+- [Rust Rand Book 随机数库 rand 的文档](https://zjp-cn.github.io/Rust-Rand-Book-zh/)  
 
 - [Rust 宏小册 zjp-CN 版](https://zjp-cn.github.io/tlborm/)
 
