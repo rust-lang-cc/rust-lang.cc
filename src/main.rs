@@ -4,7 +4,7 @@ use poem::{listener::TcpListener, route, service::Files, Server};
 async fn main() {
     let app = route().nest(
         "/",
-        Files::new("./front-end/").show_files_listing().index_file("index.html"),
+        Files::new("/app/front-end/").show_files_listing().index_file("index.html"),
     );
     let server = Server::new(TcpListener::bind("0.0.0.0:8080"))
         .await
