@@ -28,6 +28,11 @@
 
 - [Rust 命令行手册](https://suibianxiedianer.github.io/rust-cli-book-zh_CN/)  
 
+- [Rust API 编写指南](https://zjp-cn.github.io/api-guidelines/)  
+- [Rust Rand Book 随机数库 rand 的文档](https://zjp-cn.github.io/Rust-Rand-Book-zh/)  
+
+- [rust 编码规范](https://rust-coding-guidelines.github.io/rust-coding-guidelines-zh/)  
+
 - [Rust 宏小册 zjp-CN 版](https://zjp-cn.github.io/tlborm/)
 
 - [Rust 秘典](https://nomicon.purewhite.io/)  

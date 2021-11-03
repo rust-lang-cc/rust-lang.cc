@@ -1,0 +1,273 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      rust-lang.cc Road to master rust-lang.
+    </title>
+    <link rel="manifest" href="./manifest.json">
+
+    <!-- Tailwindcss CDN 
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    -->
+    <link href="./tailwind.min.css" rel="stylesheet">
+    <link href="./tailwind_purged.css" rel="stylesheet">
+
+    <!-- Alpine Plugins -->
+    <!--
+    <script defer src="https://unpkg.com/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+    -->
+    <!-- Alpine Core -->
+    <!--
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    -->
+    <script defer src="./alpinejs_collapse3.4.2.min.js"></script>
+    <script defer src="./alpinejs3.4.2.min.js"></script>
+    
+    
+  </head>
+  <body style="background-color: #ddd">
+  <div class="container mx-auto sm:w-screen md:max-w-2xl bg-gray-200 p-4 prose h-full">
+    <h1>rust-lang.cc</h1>
+    <button class="btn btn-info"><a href="#welcome" style="text-decoration: none;">Welcome</a></button>
+    <button class="btn"><a href="./en/index.html" target="_blank" style="text-decoration: none;">Practice</a></button>
+    <div id="welcome" class="modal">
+      <div class="modal-box">
+        <p>Rust-lang.cc is friendly to beginner of Rust. </p>
+        <p>Senior rustacean may also find some useful resources here, you are welcome and will be admired to contrubite to the community. </p>
+        <p>Let's start our road mastering Rust language now.</p>
+        <div class="modal-action">
+          <a href="#">OK</a>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 
+      <p>Rust-lang.cc (means continually climbing) is friendly to beginner of Rust. Senior rustacean may also find some useful resources here, you are welcome and will be admired to contrubite to the community. Let's start our road mastering Rust language now.</p>
+	
+continually, continuously, constantly. 	https://www.vocabeasy.com/2019/05/continually-vs-continuously-vs.html -->
+     
+
+    <p></p>
+
+    <div x-data={show:false} class="border rounded-box border-base-300 text-xl p-4">
+      <div class="border border-b-0" id="headingOne">
+          <button @click="show=!show" class="text-blue-500 hover:text-blue-700 focus:outline-none w-full text-left" type="button">
+            Learning path
+          </button>
+      </div>
+      <div x-show="show" x-collapse.duration.1000ms class="border border-b-0">
+    
+        <!-- <h2>Learning path</h2> -->
+
+        <p>Firstly, a tour of rust:</p>
+        <ul>
+          <li><a href="https://tourofrust.com/" target="_blank">Tour of Rust</a> </li>
+          <li><a href="https://docs.microsoft.com/en-us/learn/paths/rust-first-steps/" target="_blank">Rust first steps</a> </li>
+        </ul>
+        <br />
+
+        <p>Secondly, 3 good books by Official rust-lang.org:</p>
+        <ol>
+          <li value="1">
+            <a href="https://doc.rust-lang.org/book/" target="_blank">The Rust Programming Language (aka The Book)</a> 
+            <br />
+            <br />
+          </li>
+          <li>
+            <a href="https://doc.rust-lang.org/stable/rust-by-example/" target="_blank">Rust by example</a> 
+            <br />
+            <br />
+          </li>
+          <li>
+            <a href="https://github.com/rust-lang/rustlings/" target="_blank">Rustlings, small exercises on many basic subject of rust</a> 
+            <br />
+            <br />
+            If it's your first time running rustlings, follow the link to <a href="https://repl.it/github/rust-lang/rustlings" target="_blank">start a rustlings workspace on repl.it</a>, login replit.com.  
+            <br />
+            Note: you will need to install the rustlings command in the repl.it console as below. It will take several minutes and do not leave the installing page as it may interupt, hit the enter key sometimes to keep the page active. 
+            <br />
+            > cargo install --force --path .
+            <br />
+            > cp /home/runner/.cargo/bin/rustlings ./
+            <br />
+            <br />
+            Now make sure you are in rustlings folder, otherwise change to it:  
+            <br />
+            > pwd
+            <br />
+            > cd rustlings 
+            <br />
+            <br />
+            after that, every time you want to start your practice on rustlings, go to your <a href="https://replit.com/repls" target="_blank">repl.it workspace</a>, and run:
+            <br />
+            > ./rustlings watch
+          </li>
+        </ol>
+
+
+        <br />
+        <p>You are almost there, where to go next?</p>
+        <ul>
+          <li><a href="https://www.rust-lang.org/learn" target="_blank">Official learn page</a> </li>
+          <li><a href="https://doc.rust-lang.org/reference/index.html" target="_blank">The Rust Reference</a> </li>
+          <li><a href="https://rust-lang-nursery.github.io/rust-cookbook/" target="_blank">The Rust Cookbook</a> </li>
+        </ul>
+        
+        <br />
+
+      </div>
+    </div>
+
+    <p></p>
+    <div x-data={show:false} class="border rounded-box border-base-300 text-xl p-4">
+      <div class="border border-b-0" id="headingOne">
+          <button @click="show=!show" class="text-blue-500 hover:text-blue-700 focus:outline-none w-full text-left" type="button">
+            Practice
+          </button>
+      </div>
+      <div x-show="show" x-collapse.duration.1000ms class="border border-b-0 bg-gray-200">
+    
+        <!-- <h2>Practice</h2> -->
+      
+          <p>Codewars</p>
+          Go to <a href="https://www.codewars.com/" target="_blank">codewars</a> for practicing std libs.
+          <br />
+          <p>Exercism</p>
+          Go to <a href="https://exercism.io/" target="_blank">Exercism</a> for more exercises.
+          <br />
+          <br />
+          <p>Rust-lang.cc</p>
+          Go to Rust-lang.cc <a href="https://rust-lang.cc/en/" target="_blank">practice list</a>, guide you step by step from beginner to master.
+          <br />
+          <br />
+
+      </div>
+    </div>
+    
+    <p></p>
+    <div x-data={show:false} class="border rounded-box border-base-300 text-xl p-4">
+      <div class="border border-b-0" id="headingOne">
+          <button @click="show=!show" class="text-blue-500 hover:text-blue-700 focus:outline-none w-full text-left" type="button">
+            More resources
+          </button>
+      </div>
+      <div x-show="show" x-collapse.duration.1000ms class="border border-b-0 bg-gray-200">
+    
+        <!-- <h2>More resources</h2> -->
+
+          <p>cheats.rs</p>
+          <a href="https://cheats.rs/" target="_blank">cheats.rs</a> 
+          <br />
+          <br />
+          <a href="https://caniuse.rs/" target="_blank">can i use .rs </a>
+          <br />
+          <br />
+          
+
+          <p>A story about learning rust at 40:</p>
+          <a href="https://github.com/Dhghomon/programming_at_40/blob/master/README.md" target="_blank">learning rust at 40</a> 
+          <br />
+          The author wrote a book named "Easy rust", means learning rust in easy English.
+          <br />
+          <a href="https://dhghomon.github.io/easy_rust/" target="_blank">Easy rust</a> 
+          <br />
+          <br />
+
+
+
+          <p>Who is using Rust and how they use it?</p>
+          See 
+          <a href="./who_and_how.en.html">Who is using Rust and how they use it</a> 
+          <br />
+          <br />
+          <br />
+
+          <p>Want to buy some books to read?</p>
+          > <a href="./books.en.html">Suggested books for learning rust-lang</a>
+          <br />
+          <br />
+
+      </div>
+    </div>
+
+
+
+      <p>Leave your comments about this site, any suggestion will be appreciated.</p>
+      <button id="comments-toggle" class="btn" type="button" title="Toggle Comments" aria-label="Toggle Comments" onclick="toggleComments()">
+        Write a comment >
+      </button>
+      <div id="giscusComments">
+        <p style="font-size: .875rem; ">(Powered by giscus from <a href="https://github.com/rust-lang-cc/rust-lang.cc/discussions" target="_blank" style="text-decoration: none;">Github discuss</a>)</p>
+        <script src="https://giscus.app/client.js"
+                data-repo="rust-lang-cc/rust-lang.cc"
+                data-repo-id="MDEwOlJlcG9zaXRvcnkzOTE2MjQyNjI="
+                data-category="Announcements"
+                data-category-id="DIC_kwDOF1e2Rs4B_J-c"
+                data-mapping="pathname"
+                data-reactions-enabled="0"
+                data-emit-metadata="0"
+                data-theme="dark"
+                crossorigin="anonymous"
+                async>
+        </script>
+    </div>
+    <script>
+        function toggleComments(){
+            var element = document.getElementById("giscusComments");
+            if(element.style.display === "none"){
+                element.style.display = "block";
+                localStorage.setItem('giscus-comments', 'visible');
+            }else{
+                element.style.display = "none";
+                localStorage.setItem('giscus-comments', 'hidden');
+            }
+        }
+
+        localStorage.setItem('giscus-comments', 'hidden');
+
+        try {
+            var comments = localStorage.getItem('giscus-comments');
+            
+            if (comments == "hidden") {
+                var element = document.getElementById("giscusComments");
+                element.style.display = "none";
+            } else {
+                var element = document.getElementById("giscusComments");
+                element.style.display = "block";
+            }
+        } catch (e) { }
+    </script>
+
+
+    <br />
+    <br />
+    <br />
+    <br />
+
+    </div>
+</div>
+
+<!-- service worker -->
+<script>
+  // 判断浏览器是否支持 Service Worker
+  if ('serviceWorker' in navigator) {
+    // 在 load 事件触发后注册 Service Worker，确保 Service Worker 的注册不会影响首屏速度
+    window.addEventListener('load', function () {
+      // 注册 Service Worker
+      navigator.serviceWorker.register('/sw.js').then(function (registration) {
+        // 注册成功
+        console.log('ServiceWorker registration successful with scope: ', registration.scope)
+      }).catch(function (err) {
+        // 注册失败 :(
+        console.warn('ServiceWorker registration failed: ', err)
+      })
+    })
+  }
+</script>
+
+
+</body>
+</html>

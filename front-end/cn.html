@@ -1,0 +1,267 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      rust-lang.cc Road to master rust-lang.
+    </title>
+    <link rel="manifest" href="./manifest.json">
+
+    <!-- Tailwindcss CDN 
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    -->
+    <link href="./tailwind.min.css" rel="stylesheet">
+    <link href="./tailwind_purged.css" rel="stylesheet">
+
+    <!-- Alpine Plugins -->
+    <!--
+    <script defer src="https://unpkg.com/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+    -->
+    <!-- Alpine Core -->
+    <!--
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    -->
+    <script defer src="./alpinejs_collapse3.4.2.min.js"></script>
+    <script defer src="./alpinejs3.4.2.min.js"></script>
+    
+    
+  </head>
+  <body style="background-color: #ddd">
+  <div class="container mx-auto sm:w-screen md:max-w-2xl bg-gray-200 p-4 prose h-full">
+    <h1>rust-lang.cc</h1>
+    <button class="btn btn-info"><a href="#welcome" style="text-decoration: none;">欢迎</a></button>
+    <button class="btn"><a href="./cn/index.html" target="_blank" style="text-decoration: none;">Rust 从实例到精通</a></button>
+    <div id="welcome" class="modal">
+      <div class="modal-box">
+        <p>欢迎来到 Rust-lang.cc !</p>
+        <p>有的人说 Rust 很难学，然而也有人说 Rust 是一门不难学习的语言。本站试图在这方面做一点贡献，期望让我们的 Rust 学习之旅变得更容易更有趣。</p>
+        <p>对照讲解，从实例中学习往往是不错的学习方法。本站以实例学习为宗旨，这会让你看到你在每学完一个教程之后都会有所进步，能自己徒手写出一个又一个可以运行的 Rust 程序。这会让你真正的做到让电脑帮你做事，也就是俗称的“编程”。</p>
+        <p>废话不多说，让我们开始吧。</p>
+        <div class="modal-action">
+          <a href="#">OK</a>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 
+      <p>Rust-lang.cc (means continually climbing) is friendly to beginner of Rust. Senior rustacean may also find some useful resources here, you are welcome and will be admired to contrubite to the community. Let's start our road mastering Rust language now.</p>
+	
+continually, continuously, constantly. 	https://www.vocabeasy.com/2019/05/continually-vs-continuously-vs.html -->
+     
+
+    <p></p>
+
+    <div x-data={show:false} class="border rounded-box border-base-300 text-xl p-4">
+      <div class="border border-b-0" id="headingOne">
+          <button @click="show=!show" class="text-blue-500 hover:text-blue-700 focus:outline-none w-full text-left" type="button">
+            Learning path / 学习路径 
+          </button>
+      </div>
+      <div x-show="show" x-collapse.duration.1000ms class="border border-b-0">
+    
+        <!-- <h2>Learning path</h2> -->
+
+        <p>首先，过一下 Rust，了解基本语法:</p>
+        <ul>
+          <li><a href="https://tourofrust.com/00_zh-cn.html" target="_blank">Tour of Rust 中文版</a></li>
+          <li><a href="https://docs.microsoft.com/zh-cn/learn/paths/rust-first-steps/" target="_blank">微软教程：Rust 起步 (Rust first steps)</a></li>
+        </ul>
+
+        <br />
+
+        <p>然后，三本官方教程：</p>
+        <ol>
+          <li value="1">
+            <a href="http://120.78.128.153/rustbook/" target="_blank">Rust 编程指南中文版 (简称 The Book)</a>
+            <br />
+            <br />
+          </li>
+          <li>
+            <a href="https://rustwiki.org/zh-CN/rust-by-example/" target="_blank">Rust by example 中文版</a>
+            <br />
+            <br />
+          </li>
+          <li>
+            <a href="https://github.com/rust-lang/rustlings/" target="_blank">Rustlings, 修代码学 Rust</a> 
+            <br />
+            <a href="https://blog.csdn.net/qq_28687433/article/details/113955315" target="_blank">中文使用简介</a>
+            <br />
+            <br />
+            如果你以前没有用过 Rustlings，点击 <a href="https://repl.it/github/rust-lang/rustlings" target="_blank">新建 rustlings workspace on repl.it</a>, 注册或用 github 登录 replit.com.  
+            <br />
+            注意：你需要在 repl.it 的 console, 安装 rustlings 命令，操作如下（这会花数分钟时间，请不时的敲一下 enter 键，以防安装过程中断）：
+            <br />
+            > cargo install --force --path .
+            <br />
+            > cp /home/runner/.cargo/bin/rustlings ./
+            <br />
+            <br />
+            现在确保你在 rustlings 目录，否则进入这个目录：
+            <br />
+            > pwd
+            <br />
+            > cd rustlings 
+            <br />
+            <br />
+            在第一次安装后，以后再要运行 rustlings 就不需要重新安装了，直接到页面 <a href="https://replit.com/repls" target="_blank">repl.it workspace</a>, 运行如下命令就可以继续你的挑战了:
+            <br />
+            > ./rustlings watch
+          </li>
+        </ol>
+
+
+        <br />
+        <p>接下来学什么呢？</p>
+        <ul>
+          <li><a href="https://www.rust-lang.org/zh-CN/learn" target="_blank">官方 learn page</a></li>
+          <li><a href="https://minstrel1977.gitee.io/rust-reference/" target="_blank">Rust 参考手册 中文版</a></li>
+          <li><a href="http://llever.com/rust-cookbook-zh/intro.zh.html" target="_blank">The Rust Cookbook 中文版</a></li>
+        </ul>
+        
+        <br />
+
+      </div>
+    </div>
+
+    <p></p>
+    <div x-data={show:false} class="border rounded-box border-base-300 text-xl p-4">
+      <div class="border border-b-0" id="headingOne">
+          <button @click="show=!show" class="text-blue-500 hover:text-blue-700 focus:outline-none w-full text-left" type="button">
+            Practice / 练习
+          </button>
+      </div>
+      <div x-show="show" x-collapse.duration.1000ms class="border border-b-0 bg-gray-200">
+    
+        <!-- <h2>Practice</h2> -->
+      
+        <ul>
+          <li><p>Codewars</p>
+          最好的练习 Rust 基础库用法的地方 <a href="https://www.codewars.com/" target="_blank">codewars</a>.</li>
+          <li><p>Exercism</p>
+          更多算法练习，有导师帮忙批作业哦 <a href="https://exercism.io/" target="_blank">Exercism</a> .</li>
+          <li><p>Rust-lang.cc</p>
+          Rust <a href="https://rust-lang.cc/cn/" target="_blank">从实例到精通</a>.</li>
+        </ul>
+
+        <br />
+
+      </div>
+    </div>
+    
+    <p></p>
+    <div x-data={show:false} class="border rounded-box border-base-300 text-xl p-4">
+      <div class="border border-b-0" id="headingOne">
+          <button @click="show=!show" class="text-blue-500 hover:text-blue-700 focus:outline-none w-full text-left" type="button">
+            More resources / 其它资源
+          </button>
+      </div>
+      <div x-show="show" x-collapse.duration.1000ms class="border border-b-0 bg-gray-200">
+    
+        <!-- <h2>More resources</h2> -->
+
+          <p>其它链接</p>
+          <ul>
+            <li><a href="http://cheats.rs.kingfree.moe/" target="_blank">cheats.rs 中文版</a></li>
+            <li><a href="https://caniuse.rs/" target="_blank">can i use .rs </a></li>
+            <li>
+              <a href="https://www.gameres.com/884906.html" target="_blank">40岁学 Rust</a>
+              <br />
+              作者还写了一本书，叫 "Easy rust", 意为简单英语学 Rust.
+              <br />
+              <a href="https://kumakichi.github.io/easy_rust_chs/" target="_blank">Easy rust 中文版</a>
+            </li>
+            <li><a href="./who_and_how.html">谁在使用 Rust ?</a> </li>
+          </ul>
+
+          <br />
+
+          <p>Rust 纸质书籍推荐</p>
+          > <a href="./books.html">Suggested books for learning rust-lang</a>
+          <br />
+          <br />
+
+      </div>
+    </div>
+
+
+
+      <hr />
+      <!-- <p>有任何想法，都可以留言哦，大家一起讨论会学得更好。</p> -->
+      <button id="comments-toggle" class="btn" type="button" title="Toggle Comments" aria-label="Toggle Comments" onclick="toggleComments()">
+        点击留言 >
+      </button> 
+      <p style="font-size: .875rem; ">(有任何想法，都欢迎留言哦，大家一起讨论会学得更好. Powered by giscus from <a href="https://github.com/rust-lang-cc/rust-lang.cc/discussions" target="_blank" style="text-decoration: none;">Github discuss</a>.)</p>
+      <div id="giscusComments">
+        
+        <script src="https://giscus.app/client.js"
+                data-repo="rust-lang-cc/rust-lang.cc"
+                data-repo-id="MDEwOlJlcG9zaXRvcnkzOTE2MjQyNjI="
+                data-category="Announcements"
+                data-category-id="DIC_kwDOF1e2Rs4B_J-c"
+                data-mapping="pathname"
+                data-reactions-enabled="0"
+                data-emit-metadata="0"
+                data-theme="dark"
+                crossorigin="anonymous"
+                async>
+        </script>
+    </div>
+    <script>
+        function toggleComments(){
+            var element = document.getElementById("giscusComments");
+            if(element.style.display === "none"){
+                element.style.display = "block";
+                localStorage.setItem('giscus-comments', 'visible');
+            }else{
+                element.style.display = "none";
+                localStorage.setItem('giscus-comments', 'hidden');
+            }
+        }
+
+        localStorage.setItem('giscus-comments', 'hidden');
+
+        try {
+            var comments = localStorage.getItem('giscus-comments');
+            
+            if (comments == "hidden") {
+                var element = document.getElementById("giscusComments");
+                element.style.display = "none";
+            } else {
+                var element = document.getElementById("giscusComments");
+                element.style.display = "block";
+            }
+        } catch (e) { }
+    </script>
+
+
+    <br />
+    <br />
+    <br />
+    <br />
+
+    </div>
+</div>
+
+<!-- service worker -->
+<script>
+  // 判断浏览器是否支持 Service Worker
+  if ('serviceWorker' in navigator) {
+    // 在 load 事件触发后注册 Service Worker，确保 Service Worker 的注册不会影响首屏速度
+    window.addEventListener('load', function () {
+      // 注册 Service Worker
+      navigator.serviceWorker.register('/sw.js').then(function (registration) {
+        // 注册成功
+        console.log('ServiceWorker registration successful with scope: ', registration.scope)
+      }).catch(function (err) {
+        // 注册失败 :(
+        console.warn('ServiceWorker registration failed: ', err)
+      })
+    })
+  }
+</script>
+
+
+</body>
+</html>
