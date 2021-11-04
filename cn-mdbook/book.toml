@@ -13,3 +13,6 @@ create-missing = true
 
 [output.html]
 default-theme = "ayu"
+
+[output.html.playpen]
+editable = true

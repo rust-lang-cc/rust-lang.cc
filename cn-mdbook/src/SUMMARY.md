@@ -2,6 +2,11 @@
 
 [介绍](./introduction.md)
 
+- [Hello world](./helloworld.md)
+- [Guessing game](./guessinggame.md)
+  - [Step1 echo](./guessinggame/step1_echo.md)
+  - [Step1 answer](./guessinggame/step1_answer.md)
+  - [final](./guessinggame/final.md)
 - [入门系列](./beginner.md)
   - [Tour of Rust](./tourofrust/chapter_00.md)
     - [Chapter 01](./tourofrust/chapter_01.md)
