@@ -9,7 +9,7 @@ Step 1
 <details>
     <summary>查看提示</summary>
 
-目标：导入 std::io ，写出 fn main(), 提示输入 guess number 并打印玩家输入的数字。
+导入 std::io ，写出 fn main(), 提示输入 guess number 并打印玩家输入的数字。
 
 下面有答案。请尽量自己写出来（或复习 [The book 第二章](http://120.78.128.153/rustbook/ch02-00-guessing-game-tutorial.html)）再查看答案。
 </details>

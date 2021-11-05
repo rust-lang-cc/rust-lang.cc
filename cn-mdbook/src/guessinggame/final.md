@@ -1,9 +1,9 @@
 
-最终完成的猜数字游戏 
+恭喜你完成猜数字游戏 
 
 <br>
 <br>
-<details>
+<details open>
     <summary>完整代码</summary>
 
 ```rust, no_run
