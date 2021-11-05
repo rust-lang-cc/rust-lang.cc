@@ -3,7 +3,7 @@
 有多少种 Hello world 的写法？
 
 前置知识：无  
-练习地址：https://play.rust-lang.org  
+练习地址：[https://play.rust-lang.org](https://play.rust-lang.org)  
 
 ```rust, editable
 fn main() {
