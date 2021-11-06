@@ -12,4 +12,4 @@
 
 --- 
 
-[^1]: 由于 Guessing game 是命令行程序，不能使用 rust play 页面练习，建议本地安装 Rust 或在 [repl.it](https://repl.it) 建立运行空间。
+[^1]: 由于 Guessing game 是命令行程序，不能使用 rust play 页面练习，建议本地安装 Rust 或在 [repl.it 建立运行空间](./replit.html)。

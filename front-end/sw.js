@@ -1,12 +1,12 @@
-let dataCacheName = 'rust-lang.cc-datacache-v0.1.0'
-let cacheName = 'rust-lang.cc-cache-v0.1.0'
+let dataCacheName = 'rust-lang.cc-datacache-v0.1.1'
+let cacheName = 'rust-lang.cc-cache-v0.1.1'
 let filesToCache = [
   '/',
-  '/index.html',
-  '/books.html',
-  '/who_and_how.html',
-  '/tailwind_purged.css',
-  '/cn/index.html',
+  // '/index.html',
+  // '/books.html',
+  // '/who_and_how.html',
+  // '/tailwind_purged.css',
+  // '/cn/index.html',
   '/cn/favicon.svg',
   '/cn/favicon.png',
   '/cn/css/variables.css',
@@ -24,7 +24,7 @@ let filesToCache = [
   '/cn/clipboard.min.js',
   '/cn/highlight.js',
   '/cn/book.js',
-  '/en/index.html',
+  // '/en/index.html',
   'pwa-icons/icon_144x144.png',
   'pwa-icons/icon_152x152.png',
   'pwa-icons/icon_192x192.png',

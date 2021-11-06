@@ -1,5 +1,8 @@
+# 完成
 
-恭喜你完成猜数字游戏 
+整理代码，去除 secret_number 的显示。
+
+恭喜！你完成了猜数字游戏！  
 
 <br>
 <br>
@@ -49,7 +52,7 @@ fn main() {
 <br>
 <br>
 <details>
-    <summary>效果: </summary> 
+    <summary>运行效果: </summary> 
 
 在 console 输入 cargo run 编译并开始运行游戏。  
 
