@@ -30,7 +30,7 @@ step1
 use std::env;
 
 fn main() {
-    let args: Vec[String] = env::args().collect();
+    let args: Vec<String> = env::args().collect();
     println!("{:?}", args);
 }
 ```
@@ -45,7 +45,7 @@ fn main() {
 
 分别将 搜索词 和 文件名 参数保存到对应的参数。
 
-使用 cargo run tet poem.txt 测试一下
+使用 cargo run test poem.txt 测试一下
 
 </details>
 

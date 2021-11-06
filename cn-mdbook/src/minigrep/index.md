@@ -7,7 +7,7 @@
 ## 仿写 内容搜索命令行 grep
 
 最终完成程序的使用方法：  
-minigrep word_to_search filename.txt  
+minigrep search_string filename.txt  
 minigrep 搜索词 文件名
 
 运行结果：打印出指定文件中包含搜索词的行。[^1]  
@@ -16,4 +16,4 @@ minigrep 搜索词 文件名
 
 --- 
 
-[^1]: (可在环境变量中保存 CASE_INSENSITIVE 变量值来使搜索结果为大小写不敏感)
+[^1]: (以及可在环境变量中保存 CASE_INSENSITIVE 变量值来使搜索结果为大小写不敏感)
