@@ -10,6 +10,8 @@ Step 14
 
 类似于 search 函数， 但在合适的地方添加 .to_lowercase()， 使程序实现大小写不敏感的搜索
 
+(由于 .to_lowercase() 输出的是 String, contains 里面的 query 要使用 & 变成 &str 才符合 contains 的签名)
+
 </details>
 
 

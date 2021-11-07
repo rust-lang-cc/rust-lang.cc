@@ -57,7 +57,7 @@ pub fn search<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
     <summary>小步骤 2 用 for 循环遍历 contents.lines() answer</summary>
 
 ```rust, no_run
-pub fn search(query: &str, contents: &str) -> Vec<&str> {
+pub fn search<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
     for line in contents.lines() {
         // do something with line
     }

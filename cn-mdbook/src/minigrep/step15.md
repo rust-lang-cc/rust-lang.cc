@@ -3,9 +3,9 @@ Step 15
 现在测试通过了，是时候来写满足我们需求的真实代码了。
 
 分为三个小步骤： 
-- 更新 Struct Config { } 定义，增加 case_insensitive 项
-- 更新 Config::new 构造函数，增加 case_insensitive 部分
-- 更新 run 函数，根据 case_insensitive 的设置与否运行不同的大小写敏感搜索函数
+- 更新 Struct Config { } 定义，增加 case_sensitive 项
+- 更新 Config::new 构造函数，增加 case_sensitive 部分
+- 更新 run 函数，根据 CASE_INSENSITIVE 环境变量的设置与否，来运行不同的大小写敏感搜索函数
 
 
 <br>
@@ -82,7 +82,7 @@ impl Config {
 <details open>
     <summary>小步骤 3: 更新 run 函数</summary>
 
-根据 case_insensitive 的设置与否运行不同的大小写敏感搜索函数
+根据 CASE_INSENSITIVE 环境变量的设置与否，来运行不同的大小写敏感搜索函数
 
 </details>
 

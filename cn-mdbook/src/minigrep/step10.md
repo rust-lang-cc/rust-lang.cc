@@ -3,7 +3,7 @@ The Book 原文的 [12.4. 采用测试驱动开发完善库的功能](http://120
 
 Step 10
 
-测试驱动开发（Test Driven Development, TDD）的模式，是指先写出期望代码的功能的测试，然后再写出真实能用的代码。这也算是一种目标管理法吧。
+测试驱动开发（Test Driven Development, TDD）的模式，是指先写出期望的功能的测试，然后再写出真实能用的代码。这也算是一种目标管理法吧。
 
 测试驱动开发 (TDD) 是一个软件开发技术，它遵循如下步骤：
 
@@ -21,6 +21,20 @@ Step 10
     <summary>查看提示</summary>
 
 练习手打测试代码的结构
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test1() {
+        // --snip--
+        assert_eq!(
+            expected_result,
+            myFunction()
+        );
+    }
+}
 
 未来要完成的函数的签名为: search(query, content) -> Vec<&str> 
 
