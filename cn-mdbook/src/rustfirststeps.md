@@ -13,6 +13,8 @@
 
 这里， 我们要重点介绍的是它的一个完整实例模块： [构建命令行 todolist 程序](https://docs.microsoft.com/zh-cn/learn/modules/rust-create-command-line-program/)， 作为我们命令行的练习 [Guessing game](./guessgame/index.html) 和 [minigrep](./minigrep/index.html) 的加强和扩展。
 
+这个实例的练习可以在本地环境或 [repl.it](https://repl.it/) 完成。
+
 由于这个实例教程写得十分的好，我们没有必要将它的内容再完全复制到这里，请到 <strong> [构建命令行 todolist 程序](https://docs.microsoft.com/zh-cn/learn/modules/rust-create-command-line-program/) 页面 </strong>去学习，并带着成就感回来，再开始我们的新的征程！
 
 --- 
