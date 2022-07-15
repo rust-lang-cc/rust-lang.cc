@@ -50,3 +50,7 @@
 
 - [Rust 初级读本 2016年版](https://www.bookstack.cn/read/RustPrimer/README.md)  
 - [Rust 版本指南](https://erasin.wang/books/edition-guide-cn/)  
+
+- [axum demo](https://github.com/joelparkerhenderson/demo-rust-axum)
+
+- [Inside Rust std library](https://github.com/Warrenren/inside-rust-std-library)
